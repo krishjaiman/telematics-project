@@ -1,12 +1,12 @@
-Telematics-Based Auto Insurance Solution
+**Telematics-Based Auto Insurance Solution**
 This project is a proof-of-concept implementation of a modern, usage-based insurance (UBI) system as outlined. It moves away from traditional, static insurance models and towards a dynamic pricing engine that leverages real-time driving data to calculate fairer and more personalized premiums.
 
 The application simulates driving data, processes it to identify key behaviors, uses a machine learning model to generate a risk score, and presents the final score and estimated premium on a user-friendly web dashboard.
 
-🚀 Project Phases & Methodology
+**🚀 Project Phases & Methodology**
 The project was developed in a sequential, multi-phase process:
 
-1. Data Simulation
+**1. Data Simulation**
 Objective: To create a realistic dataset for model training without requiring real-world telematics hardware.
 
 Methodology: A Python script generates time-series data for multiple drivers and trips. Two distinct "behavior profiles" were created:
@@ -19,7 +19,7 @@ We have used a sampling rate of 1 sample per second that is, we record the param
 
 Output: A driving_data_large.csv file containing raw, second-by-second sensor readings. This file can be found here: https://drive.google.com/file/d/1qyTKSHAc44r_Y3o1reOSIvv3VumYXT9O/view?usp=sharing
 
-2. Feature Engineering
+**2. Feature Engineering**
 Objective: To transform low-level sensor data into high-level, interpretable features that describe a trip's behavior.
 
 Methodology: The raw data is grouped by trip_id, and for each trip, the following key features are calculated:
@@ -34,7 +34,7 @@ Contextual Risk: The percentage of the trip driven during high-risk hours (late 
 
 Output: A trip_summary_features.csv file, where each row is a summarized trip.
 
-3. Model Training & Validation
+**3. Model Training & Validation**
 Objective: To build a robust machine learning model that can predict a driver's risk score based on the engineered features.
 
 Methodology:
@@ -47,7 +47,7 @@ To ensure robustness, the models were evaluated on a "noisy" version of the test
 
 Output: A risk_model_winner.joblib file containing the trained and validated Random Forest model.
 
-4. Backend Development (API)
+**4. Backend Development (API)**
 Objective: To create a web server that can process new trip data and serve predictions from our trained model.
 
 Methodology: A Flask application was developed with a single API endpoint (/calculate_premium). This endpoint:
@@ -66,7 +66,7 @@ Returns the final score and premium as a JSON response.
 
 Technology: Python, Flask, Flask-CORS.
 
-5. Frontend Development (Dashboard)
+**5. Frontend Development (Dashboard)**
 Objective: To create a simple, interactive web interface for users to simulate a trip and view the results.
 
 Methodology: A static web page was built using HTML, CSS, and vanilla JavaScript.
@@ -79,7 +79,7 @@ The frontend then dynamically displays the risk score and premium returned by th
 
 Technology: HTML, CSS, JavaScript.
 
-🛠️ Tech Stack
+**🛠️ Tech Stack**
 Data Science & ML: Python, Pandas, NumPy, Scikit-learn
 
 Backend: Flask, Flask-CORS, Gunicorn (for deployment)
@@ -88,7 +88,7 @@ Frontend: HTML5, CSS3, Vanilla JavaScript
 
 Model Persistence: Joblib
 
-⚙️ How to Run the Project Locally
+**⚙️ How to Run the Project Locally**
 Follow these steps to set up and run the application on your local machine.
 
 Prerequisites
@@ -135,7 +135,7 @@ telematics-project/
 
 You can now interact with the dashboard, select a trip type, and click "Calculate Premium" to see the full system in action.
 
-🔮 Future Improvements
+**🔮 Future Improvements**
 This project provides a solid foundation. Future enhancements could include:
 
 Real-time Data Ingestion: Integrate with a message queue like Kafka or RabbitMQ to process data from real telematics devices.
