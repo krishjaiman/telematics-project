@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telematics Insurance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Telematics Risk Dashboard</h1>
+            <p>Simulate a trip to see your real-time risk score and premium.</p>
+        </header>
+
+        <main class="dashboard">
+            <div class="controls">
+                <label for="trip-select">Select a Trip to Simulate:</label>
+                <select id="trip-select">
+                    <option value="safe_trip">Safe Driving Trip</option>
+                    <option value="risky_trip">Risky Driving Trip</option>
+                </select>
+                <button id="calculate-btn">Calculate Premium</button>
+            </div>
+
+            <div class="results-container">
+                <div id="loader" class="loader hidden"></div>
+                <div id="results" class="results hidden">
+                    <div class="result-card">
+                        <h2>Risk Score</h2>
+                        <p id="risk-score" class="score">--</p>
+                        <div id="gamification-badge" class="badge hidden">
+                            <span>🏆 Safe Driver!</span>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <h2>Estimated Premium</h2>
+                        <p id="premium" class="premium">$--</p>
+                    </div>
+                </div>
+                 <div id="error-message" class="error hidden"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
